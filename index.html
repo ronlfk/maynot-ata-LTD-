@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MAYANOT ATA</title>
+
+  <style>
+    :root{
+      --bg1:#f6f9ff; --bg2:#eef2ff;
+      --panel:#ffffffee; --panel-solid:#ffffff;
+      --text:#0f172a; --muted:#475569;
+      --line:#e2e8f0;
+      --green:#16a34a; --blue:#2563eb;
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; min-height:100vh; font-family:system-ui,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 10% -10%, #dbeafe 0%, transparent 60%),
+        radial-gradient(1000px 700px at 110% 10%, #dcfce7 0%, transparent 55%),
+        linear-gradient(160deg,var(--bg1),var(--bg2));
+      display:grid; place-items:center; padding:24px;
+    }
+    .wrap{
+      width:min(980px,100%);
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:0 18px 60px #0f172a22;
+      backdrop-filter: blur(8px);
+    }
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding-bottom:18px; border-bottom:1px solid var(--line); margin-bottom:20px;
+    }
+    .brand{display:flex; align-items:center; gap:12px;}
+    .logo{
+      width:46px;height:46px;border-radius:12px;flex:0 0 auto;
+      background: conic-gradient(from 210deg, var(--green), var(--blue), #a855f7, var(--green));
+      box-shadow:0 6px 18px #16a34a33;
+      border:1px solid #ffffff;
+    }
+    h1{font-size:clamp(22px,3vw,28px); margin:0}
+    .subtitle{color:var(--muted); font-size:14px}
+
+    .hero{ text-align:center; padding:8px 6px 2px; }
+    .hero h2{margin:0;font-size:clamp(20px,2.6vw,24px);}
+    .hero p{color:var(--muted); margin-top:8px}
+
+    .buttons{
+      display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px; margin-top:16px;
+    }
+    button.btn{
+      cursor:pointer; border:1px solid transparent; color:white; font-weight:800;
+      padding:18px 16px; border-radius:var(--radius);
+      transition:.18s transform,.18s opacity,.18s box-shadow;
+      font-size:18px;
+    }
+    button.btn:hover{
+      transform:translateY(-2px); opacity:.95; box-shadow:0 10px 26px #0f172a22;
+    }
+    .privacy{ background:linear-gradient(135deg,#22c55e,#16a34a); border-color:#15803d;}
+    .terms{ background:linear-gradient(135deg,#3b82f6,#2563eb); border-color:#1d4ed8;}
+
+    footer{
+      margin-top:22px; padding-top:14px; border-top:1px solid var(--line);
+      display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px;
+      color:var(--muted); font-size:14px;
+    }
+
+    /* pages */
+    .page{display:none; margin-top:18px; padding-top:18px; border-top:1px dashed var(--line);}
+    .page.active{display:block;}
+    .page h3{margin-top:0;font-size:22px}
+    .page h4{margin-bottom:6px}
+    .page p, .page li{color:#334155; line-height:1.7}
+    .back{
+      margin-top:10px; display:inline-block; color:#1d4ed8; cursor:pointer; font-weight:700;
+    }
+    .pill{
+      display:inline-block; padding:4px 10px; border-radius:999px;
+      background:#f1f5f9; border:1px solid var(--line); font-size:12px; color:#0f172a;
+      margin-bottom:10px;
+    }
+
+    @media (max-width:640px){
+      .buttons{grid-template-columns:1fr;}
+      header{flex-direction:column; align-items:flex-start;}
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>MAYANOT ATA</h1>
+          <div class="subtitle">Game Studio • Official Policies</div>
+        </div>
+      </div>
+      <div class="subtitle">Contact: daitbatell@gmail.com</div>
+    </header>
+
+    <!-- HOME -->
+    <section id="home" class="hero page active">
+      <h2>Welcome</h2>
+      <p>
+        MAYANOT ATA is a game studio.  
+        Our apps do not use third-party SDKs and do not collect any user information.
+      </p>
+
+      <div class="buttons">
+        <button class="btn privacy" onclick="showPage('privacy')">Privacy Policy</button>
+        <button class="btn terms" onclick="showPage('terms')">Terms of Use</button>
+      </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section id="privacy" class="page">
+      <span class="pill">Last updated: 21 Nov 2025</span>
+      <h3>Privacy Policy</h3>
+
+      <p>
+        MAYANOT ATA (“we”, “our”, “the Studio”) develops and publishes casual and mobile games.
+        We take privacy seriously and design our products to minimize data use.
+      </p>
+
+      <h4>1. Data We Collect</h4>
+      <p>
+        We do not collect, store, track, or share any personal data or device identifiers.
+        Our games operate without user accounts and without any background data collection.
+      </p>
+
+      <h4>2. No Third-Party SDKs</h4>
+      <p>
+        Our apps do not include analytics, advertising, attribution, or any other third-party SDKs.
+        Therefore, no data is transmitted to external providers.
+      </p>
+
+      <h4>3. Cookies / Tracking on This Site</h4>
+      <p>
+        This website does not use cookies or tracking technologies.
+      </p>
+
+      <h4>4. Children’s Privacy</h4>
+      <p>
+        Our games are suitable for general audiences. Since we do not collect data,
+        we do not knowingly process information from children or any other users.
+      </p>
+
+      <h4>5. Changes to This Policy</h4>
+      <p>
+        If we ever change our data practices, we will update this policy here
+        before any change takes effect.
+      </p>
+
+      <h4>6. Contact</h4>
+      <p>
+        For questions about this policy, contact us at:
+        <strong>daitbatell@gmail.com</strong>
+      </p>
+
+      <span class="back" onclick="showPage('home')">← Back to Home</span>
+    </section>
+
+    <!-- TERMS -->
+    <section id="terms" class="page">
+      <span class="pill">Last updated: 21 Nov 2025</span>
+      <h3>Terms of Use</h3>
+
+      <p>
+        These Terms govern your use of MAYANOT ATA games and this website.
+        By downloading, installing, or using our games, you agree to these Terms.
+        If you do not agree, please do not use the games.
+      </p>
+
+      <h4>1. License</h4>
+      <p>
+        We grant you a personal, non-exclusive, non-transferable,
+        revocable license to use our games for personal entertainment.
+      </p>
+
+      <h4>2. Acceptable Use</h4>
+      <ul>
+        <li>Do not cheat, exploit bugs, or attempt to gain unfair advantage.</li>
+        <li>Do not reverse engineer, decompile, or modify the games.</li>
+        <li>Do not use the games for illegal or harmful purposes.</li>
+      </ul>
+
+      <h4>3. No Data Collection</h4>
+      <p>
+        Our games do not use third-party SDKs and do not collect any user information.
+      </p>
+
+      <h4>4. Intellectual Property</h4>
+      <p>
+        All games, graphics, sound, code, and trademarks are owned by MAYANOT ATA
+        or licensed to us. You may not copy or redistribute any part without permission.
+      </p>
+
+      <h4>5. Disclaimer</h4>
+      <p>
+        The games are provided “as is” and “as available”. We make no warranties of any kind,
+        including fitness for a particular purpose or uninterrupted availability.
+      </p>
+
+      <h4>6. Limitation of Liability</h4>
+      <p>
+        To the maximum extent permitted by law, MAYANOT ATA will not be liable
+        for any indirect or consequential damages arising from use of the games.
+      </p>
+
+      <h4>7. Updates / Changes</h4>
+      <p>
+        We may update the games or these Terms from time to time.
+        Continued use after an update means you accept the revised Terms.
+      </p>
+
+      <h4>8. Contact</h4>
+      <p>
+        Questions? Email:
+        <strong>daitbatell@gmail.com</strong>
+      </p>
+
+      <span class="back" onclick="showPage('home')">← Back to Home</span>
+    </section>
+
+    <footer>
+      <div>© MAYANOT ATA</div>
+      <div>Game Studio • No SDKs • No data collection</div>
+      <div>daitbatell@gmail.com</div>
+    </footer>
+  </main>
+
+  <script>
+    function showPage(id){
+      document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+  </script>
+</body>
+</html>
+
